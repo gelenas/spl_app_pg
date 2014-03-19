@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user 
       # Sign the user in and redirect to the user's show page.
       sign_in user
-      redirect_to user
+      redirect_back_or user
     else
        flash.now[:error] = 'Invalid email' 
       render 'new'
